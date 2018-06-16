@@ -1,10 +1,12 @@
+/**
+* Leetcode
+	152. Maximum Product Subarray
+*/
 public class MaxProduct {
     public int maxProduct(int[] nums) {
         if (nums == null || nums.length == 0)
             return -1;
-        
-        
-        
+               
         int n = nums.length;      
         if ( n == 1)
             return nums[0];
