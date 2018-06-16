@@ -1,0 +1,15 @@
+Qiaolins-MBP:interview qiaolinjin$ git checkout -b dev origin/dev
+Qiaolins-MBP:interview qiaolinjin$ git branch
+* dev
+  master
+Qiaolins-MBP:interview qiaolinjin$ git add MaxProduct.java
+Qiaolins-MBP:interview qiaolinjin$ git commit -m "new maxproduct"
+
+Qiaolins-MBP:interview qiaolinjin$ git push origin dev
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 592 bytes | 592.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:nick95129/interview.git
+   356dd6c..248eb65  dev -> dev
