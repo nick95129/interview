@@ -1,0 +1,63 @@
+import java.util.Stack;
+
+public class MinStack {
+	
+	class Node {
+		int val;
+		int min;
+		public Node(int val, int min) {
+			this.val = val;
+			this.min = min;
+		}
+	}
+	
+	Stack<Node> stack;
+	public MinStack() {
+		stack = new Stack<Node>();
+	}
+	
+	public void push(int val) {
+		int min = Integer.MIN_VALUE;
+		if (!stack.isEmpty()) {
+			min = (val < top()) ? val : top();
+		}
+		Node node = new Node(val, min);
+		stack.push(node);			
+	}
+	
+	public int pop() {
+		if (stack.isEmpty())
+			return Integer.MIN_VALUE;
+		Node node = stack.pop();
+		return node.val;
+	}
+	
+	public int top() {
+		if (stack.isEmpty())
+			return Integer.MIN_VALUE;
+		Node node = stack.peek();
+		return node.val;
+	}
+	
+	public int getMin() {
+		if (stack.isEmpty())
+			return Integer.MIN_VALUE;
+		Node node = stack.peek();
+		return node.min;		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MinStack test = new MinStack();
+		test.push(-2);
+		test.push(0);
+		test.push(-3);
+		System.out.println("Min: " + test.getMin());
+		
+		test.pop();
+		test.pop();
+		System.out.println("Min: " + test.getMin());
+
+	}
+
+}

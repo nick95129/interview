@@ -1,0 +1,50 @@
+import java.util.ArrayList;
+
+
+public class Subset {
+	
+	public List<List<Integer>> subset(int[] nums) {
+		
+		List<List<Integer>> res = new ArrayList<>();
+		
+		List<Integer> prev = new ArrayList<Integer>();
+		dfs(nums, 0, prev, res);
+		return res;
+		
+	}
+	
+	void dfs(int[] nums, int index, List<Integer> prev, List<List<Integer>> res) {
+		
+		if (index == nums.length) {
+			res.add(new ArrayList<Integer> (prev));
+			return;
+		}
+		
+		List<Integer> temp =  new ArrayList<Integer> (prev);
+		prev.add(nums[index]);
+		dfs (nums, index+1, prev, res);
+		dfs (nums, index+1, temp, res);
+	}
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Subset test = new Subset();
+		int[] nums = {1, 2, 3};
+		
+		List<List<Integer>> res  = test.subset(nums);
+		
+		for(int i = 0; i < res.size(); i++) {
+			List<Integer> sl = res.get(i);
+			
+			for (int j = 0; j < sl.size(); j++) {
+				System.out.print(sl.get(j) + " ");
+			}
+			System.out.println(" ");
+		}
+
+
+	}
+
+}
