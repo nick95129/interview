@@ -12,7 +12,11 @@ From starting index i = 1 and i = 2, we can jump to i = 3, then we can't jump an
 From starting index i = 3, we can jump to i = 4, so we've reached the end.
 From starting index i = 4, we've reached the end already.
 In total, there are 2 different starting indexes (i = 3, i = 4) where we can reach the end with some number of jumps.
+
+add test
 */
+
+
 
 
 public class OddEvenJumps {
